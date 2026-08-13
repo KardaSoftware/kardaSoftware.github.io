@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ALAN ADI ALINDIĞINDA bu satır güncellenmelidir
+Sitemap: https://turkhristiyanbirligi.com/sitemap.xml
