@@ -134,6 +134,17 @@ document.addEventListener("DOMContentLoaded", function () {
     counters.forEach((c) => counterObserver.observe(c));
   }
 
+  /* ---------- Kuruluştan bu yana geçen yıl ---------- */
+  // 30 Temmuz 2009'dan bu yana tamamlanan yıl sayısı; her 30 Temmuz'da
+  // kendiliğinden bir artar. HTML'deki değer JS kapalıyken yedek kalır.
+  const yearsEl = document.querySelector(".split-badge-num");
+  if (yearsEl) {
+    const now = new Date();
+    const anniversaryPassed =
+      now.getMonth() > 6 || (now.getMonth() === 6 && now.getDate() >= 30);
+    yearsEl.textContent = now.getFullYear() - 2009 - (anniversaryPassed ? 0 : 1);
+  }
+
   /* ---------- Galeri lightbox ---------- */
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
